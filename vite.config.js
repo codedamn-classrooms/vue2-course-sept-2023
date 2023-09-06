@@ -1,5 +1,12 @@
-const { createVuePlugin } = require('vite-plugin-vue2');
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue2";
 
-module.exports = {
-  plugins: [createVuePlugin()],
-};
+// https://vitejs.dev/config/
+export default defineConfig({
+	resolve: {
+		alias: {
+			vue: "vue/dist/vue.esm.js",
+		},
+	},
+	plugins: [vue()],
+});
